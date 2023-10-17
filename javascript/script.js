@@ -6,7 +6,9 @@ let msg;
 // ESERCIZIO PALINDROMO
 // Decommentando il commentato // // si ha la soluzione senza usare il for inverso
 
-btn.addEventListener("click", function () {
+btn.addEventListener("click", palindromo);
+
+function palindromo() {
   reset();
   // //    const firstArray = [];
   let userString = inputEl.value;
@@ -37,8 +39,7 @@ btn.addEventListener("click", function () {
   // //      ? "E' palindromo"
   // //      : "Non e' palindromo";
   // //   console.log(msg);
-});
-
+}
 function reset() {
   resultEl.classList.remove("alert-danger");
   resultEl.classList.add("d-none");
