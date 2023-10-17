@@ -11,7 +11,7 @@ function getRndInteger(min, max) {
 
 /**
  * Determina se il numero e' pari
- * @param {Number} num
+ * @param {Number}
  * @returns {Boolean}
  */
 function isEven(num) {

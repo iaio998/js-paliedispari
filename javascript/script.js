@@ -36,14 +36,34 @@ const resultEl2 = document.querySelector(".alert2");
 let msg2;
 let userNumber;
 let computerNumber;
+let totalNumber;
 
+// btnEven.addEventListener("click", function () {
+//   userNumber = parseInt(inputEl2.value);
+//   if (userNumber > 5) {
+//     alert("Il numero deve essere inferiore a 5");
+//   } else {
+//     computerNumber = parseInt(getRndInteger(1, 5));
+//     console.log(userNumber, computerNumber);
+//     totalNumber = userNumber + computerNumber;
+//     console.log(totalNumber);
+//     msg2 = isEven(totalNumber) ? "Ha vinto l'utente" : "Ha vinto il computer";
+//   }
+//   console.log(msg2);
+// });
+
+// btnOdd.addEventListener("click", function () {
+//   userNumber = parseInt(inputEl2.value);
+//   computerNumber = parseInt(getRndInteger(1, 5));
+//   console.log(userNumber, computerNumber);
+//   totalNumber = userNumber + computerNumber;
+//   console.log(totalNumber);
+//   msg2 = !isEven(totalNumber) ? "Ha vinto l'utente" : "Ha vinto il computer";
+//   console.log(msg2);
+// });
+const pariDispari = document.getElementById("pari-dispari");
+let userSelection;
 btnEven.addEventListener("click", function () {
+  userSelection = pariDispari.value;
   userNumber = parseInt(inputEl2.value);
-  computerNumber = parseInt(getRndInteger(1, 5));
-  console.log(userNumber, computerNumber);
-});
-btnOdd.addEventListener("click", function () {
-  userNumber = parseInt(inputEl2.value);
-  computerNumber = parseInt(getRndInteger(1, 5));
-  console.log(userNumber, computerNumber);
 });
