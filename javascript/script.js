@@ -1,6 +1,6 @@
-const btn = document.querySelector("button");
+const btn = document.querySelector(".btn1");
 const inputEl = document.getElementById("data");
-const resultEl = document.querySelector(".alert");
+const resultEl = document.querySelector(".alert1");
 let msg;
 
 // ESERCIZIO PALINDROMO
@@ -29,9 +29,21 @@ btn.addEventListener("click", function () {
 
 // ESERCIZIO PARI E DISPARI
 
-const inputEl2 = document.getElementById("pari", "dispari");
+const btnEven = document.querySelector(".btn2");
+const btnOdd = document.querySelector(".btn3");
+const inputEl2 = document.getElementById("data2");
+const resultEl2 = document.querySelector(".alert2");
+let msg2;
+let userNumber;
+let computerNumber;
 
-inputEl2.addEventListener("click", function () {
-  inputEl.classList.remove("d-none");
-  let userSelection = inputEl2.value;
+btnEven.addEventListener("click", function () {
+  userNumber = parseInt(inputEl2.value);
+  computerNumber = parseInt(getRndInteger(1, 5));
+  console.log(userNumber, computerNumber);
+});
+btnOdd.addEventListener("click", function () {
+  userNumber = parseInt(inputEl2.value);
+  computerNumber = parseInt(getRndInteger(1, 5));
+  console.log(userNumber, computerNumber);
 });
