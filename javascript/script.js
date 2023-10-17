@@ -7,17 +7,29 @@ let msg;
 // Decommentando il commentato // // si ha la soluzione senza usare il for inverso
 
 btn.addEventListener("click", function () {
+  reset();
   // //    const firstArray = [];
   let userString = inputEl.value;
   let newString = "";
+  let alertColor = "alert-success";
   console.log(userString);
   for (let i = userString.length - 1; i >= 0; i--) {
     console.log(userString[i]);
     newString += userString[i];
   }
   console.log(newString);
-  msg = userString === newString ? "E' palindromo" : "Non e' palindromo";
+  if (userString === newString) {
+    msg = "E' palindromo";
+  } else {
+    alertColor = "alert-danger";
+    msg = "Non e' palindromo";
+  }
+  //   msg =
+  //     userString === newString
+  //       ? "E' palindromo"
+  //       : "Non e' palindromo" ;
   console.log(msg);
+  printResult(alertColor, msg);
   // //   console.log(firstArray);
   // //   console.log(firstArray.join(""), firstArray.reverse().join(""));
   // //   msg =
@@ -27,7 +39,19 @@ btn.addEventListener("click", function () {
   // //   console.log(msg);
 });
 
+function reset() {
+  resultEl.classList.remove("alert-danger");
+  resultEl.classList.add("d-none");
+}
+
+function printResult(alertColor, message) {
+  resultEl.classList.add(alertColor);
+  resultEl.classList.remove("d-none");
+  resultEl.innerHTML = message;
+}
+
 // ESERCIZIO PARI E DISPARI
+// Decommentando il commentato // si ha la soluzione ma con due bottoni diversi (decommentare anche il button in HTML)
 
 const btnEven = document.querySelector(".btn2");
 const btnOdd = document.querySelector(".btn3");
@@ -61,9 +85,48 @@ let totalNumber;
 //   msg2 = !isEven(totalNumber) ? "Ha vinto l'utente" : "Ha vinto il computer";
 //   console.log(msg2);
 // });
+
 const pariDispari = document.getElementById("pari-dispari");
 let userSelection;
-btnEven.addEventListener("click", function () {
+
+btnEven.addEventListener("click", evenOdd);
+
+function evenOdd() {
+  reset2();
+  let alertColor = "alert-success";
   userSelection = pariDispari.value;
   userNumber = parseInt(inputEl2.value);
-});
+  computerNumber = parseInt(getRndInteger(1, 5));
+  console.log(userNumber, userSelection, computerNumber);
+
+  totalNumber = userNumber + computerNumber;
+  console.log(totalNumber);
+
+  if (userNumber > 5) {
+    alert("Il numero deve essere inferiore a 5");
+  }
+  if (isEven(totalNumber) && userSelection === "pari") {
+    msg2 = "Ha vinto l'utente";
+  } else if (!isEven(totalNumber) && userSelection === "dispari") {
+    msg2 = "Ha vinto l'utente";
+  } else if (isEven(totalNumber) && userSelection === "dispari") {
+    alertColor = "alert-danger";
+    msg2 = "Ha vinto il computer";
+  } else if (!isEven(totalNumber) && userSelection === "pari") {
+    alertColor = "alert-danger";
+    msg2 = "Ha vinto il computer";
+  }
+  console.log(msg2);
+  printResult2(alertColor, msg2);
+}
+
+function reset2() {
+  resultEl2.classList.remove("alert-danger");
+  resultEl2.classList.add("d-none");
+}
+
+function printResult2(alertColor, message) {
+  resultEl2.classList.add(alertColor);
+  resultEl2.classList.remove("d-none");
+  resultEl2.innerHTML = message;
+}
