@@ -24,7 +24,7 @@ btn.addEventListener("click", function () {
     alertColor = "alert-danger";
     msg = "Non e' palindromo";
   }
-  //   msg =
+  //   msg =                       // Ternario su cui fare domanda
   //     userString === newString
   //       ? "E' palindromo"
   //       : "Non e' palindromo" ;
