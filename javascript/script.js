@@ -44,7 +44,6 @@ function reset() {
   resultEl.classList.remove("alert-danger");
   resultEl.classList.add("d-none");
 }
-
 function printResult(alertColor, message) {
   resultEl.classList.add(alertColor);
   resultEl.classList.remove("d-none");
@@ -62,6 +61,9 @@ let msg2;
 let userNumber;
 let computerNumber;
 let totalNumber;
+
+const pariDispari = document.getElementById("pari-dispari");
+let userSelection;
 
 // btnEven.addEventListener("click", function () {
 //   userNumber = parseInt(inputEl2.value);
@@ -86,9 +88,6 @@ let totalNumber;
 //   msg2 = !isEven(totalNumber) ? "Ha vinto l'utente" : "Ha vinto il computer";
 //   console.log(msg2);
 // });
-
-const pariDispari = document.getElementById("pari-dispari");
-let userSelection;
 
 btnEven.addEventListener("click", evenOdd);
 
